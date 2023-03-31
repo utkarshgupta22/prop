@@ -1,0 +1,163 @@
+.featurehead{
+    color: white;
+    font-size: 32px;
+}
+.bold1{
+    color: #0095ff;
+    font-weight: bold;
+}
+.handpick{
+    color: white;
+    font-size: 17px;
+}
+
+.section-content1{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 4rem;
+    
+}
+.collection-image{
+    width: 16rem !important;
+    height: 12rem;
+    border-radius: 1rem;  
+}
+.coll1{
+    color: #0095ff;
+    font-size: x-large;
+    margin-top: 1rem;
+   
+}
+.coll2{
+    color: white;
+    font-size: x-small;
+    margin-top: 1rem;
+  
+}
+.header1{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+.contact-text1{
+    color: white !important;
+    background-color: #0095ff !important;
+    border: 1px solid 3e7be5 !important;
+    border-radius: 10px !important;
+}
+.rentbg-image{
+    height: 33rem !important;
+}
+
+.rentDivSetting{
+    overflow: hidden !important;
+    display: flex;
+    flex-wrap: wrap;
+    width: 68rem;
+    justify-content: space-between;
+    align-items: center;
+    height: 384px !important;
+  }
+
+  .rentItemSetting{
+    position: relative !important;
+    left: 0px !important;
+    top: 0px !important;
+    width: 30% !important;
+  }
+
+
+
+  .house-statuses {
+    display: flex;
+    width: 100%;
+    height: 3rem;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 13px;
+    position: relative;
+    top: 36px;
+    border: 2px solid black;
+    background-color: white;
+    opacity: 0.7;
+  }
+  .status{
+    cursor: pointer;
+    font-size: large;
+    font-weight: 700;
+  }
+
+  .searchHouseType{
+    margin: auto;
+    width: 50% !important;
+  }
+
+  .houseBtnStyle{
+    margin-top: 0rem;
+    font-size: x-large;
+    font-weight: 900;
+    color: black;
+    font-family: monospace;
+  }
+  .houseBtnStyle:hover{
+    color: black;
+    opacity: 1;
+    text-decoration: underline;
+    background: transparent !important;
+  }
+  .houseastyle:hover{
+    background: transparent !important;
+  }
+
+  .dropdown-menu li {
+    position: relative;
+  }
+  .dropdown-menu .dropdown-submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: -7px;
+  }
+  .dropdown-menu .dropdown-submenu-left {
+    right: 100%;
+    left: auto;
+  }
+  .dropdown-menu > li:hover > .dropdown-submenu {
+    display: block;
+  }
+
+
+  .listingimgsize{
+    height: 12rem !important;
+    width: 100% !important;
+  }
+  section .card .image{
+    height: 140px;
+    width: 140px;
+
+  }
+  section .card .image img{
+   height:100%;
+   width: 100%;
+   object-fit: cover;
+  }
+  .card{
+    width: 150px;
+    border-radius: 10px;
+  }
+
+  .sellDivSetting{
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 1000px !important;
+  }
+
+  .sellItemSetting{
+    position: relative !important;
+    left: 0px !important;
+    top: 0px !important;
+  }
+  

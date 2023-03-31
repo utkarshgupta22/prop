@@ -1,0 +1,2348 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html lang="en">
+
+<head>
+    <!--=============== basic  ===============-->
+    <meta charset="UTF-8">
+    <title>Homeradar - Real Estate Listing Template</title>
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <!--=============== css  ===============-->
+    <link type="text/css" rel="stylesheet" href="/static/css/plugins.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/style.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/dashboard-style.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/dark-style.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/color.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/dashboard-add-listing.css">
+
+    <head>
+        <!--=============== basic  ===============-->
+        <meta charset="UTF-8">
+        <title>Homeradar - Real Estate Listing Template</title>
+        <meta name="robots" content="index, follow" />
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <!--=============== css  ===============-->
+        <link type="text/css" rel="stylesheet" href="/static/css/plugins.css">
+        <link type="text/css" rel="stylesheet" href="/static/css/style.css">
+        <link type="text/css" rel="stylesheet" href="/static/css/dashboard-style.css">
+        <link type="text/css" rel="stylesheet" href="/static/css/dark-style.css">
+        <link type="text/css" rel="stylesheet" href="/static/css/color.css">
+        <link type="text/css" rel="stylesheet" href="/static/css/dashboard-add-listing.css">
+
+        <!--=============== favicons ===============-->
+        <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://kit.fontawesome.com/17483d7dfc" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+
+            <style>
+                .preview-item {
+                    display: inline-block;
+                    position: relative;
+                    margin: 5px;
+                  }
+                  
+                  .preview-image {
+                    max-width: 150px;
+                    max-height: 150px;
+                  }
+                  
+                  .delete-button {
+                    position: absolute;
+                    top: -10px;
+                    right: -10px;
+                    background-color: red;
+                    color: white;
+                    border: none;
+                    border-radius: 50%;
+                    width: 25px;
+                    height: 25px;
+                    cursor: pointer;
+                  }
+                  .logosetting{
+                    position: relative !important;
+                    left: 0px;
+                    top: 0px;
+                    margin-left: 4rem;
+                }
+                .logoimgsetting{
+                    height: 10vh !important;
+                    width: 10vw !important;
+                }
+            </style>
+    </head>
+
+<body>
+    <!--loader-->
+    <div class="loader-wrap">
+        <div class="loader-inner">
+            <svg>
+                <defs>
+                    <filter id="goo">
+                        <fegaussianblur in="SourceGraphic" stdDeviation="2" result="blur" />
+                        <fecolormatrix in="blur" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 5 -2" result="gooey" />
+                        <fecomposite in="SourceGraphic" in2="gooey" operator="atop" />
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+    </div>
+    <!--loader end-->
+    <!-- main -->
+    <div id="main">
+        <!-- header -->
+        <header class="main-header">
+            <!--  logo  -->
+            <div class="logo-holder logosetting"><a href="{% url 'index' %}"><img class="logoimgsetting" src="{% static 'images/logo.png' %}" alt=""></a>
+            </div>
+            <!-- logo end  -->
+            <!-- nav-button-wrap-->
+            <div class="nav-button-wrap color-bg nvminit">
+                <div class="nav-button">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+            <!-- nav-button-wrap end-->
+            <!-- header-search button  -->
+            <div class="header-search-button">
+                <i class="fal fa-search"></i>
+                <span>Search...</span>
+                </li>
+                <li>
+                    <div class="widget-posts-img"><a href="listing-single.html"><img src="images/all/small/1.jpg"
+                                alt=""></a>
+                    </div>
+                    <div class="widget-posts-descr">
+                        <h4><a href="listing-single.html">Family Apartments</a></h4>
+                        <div class="geodir-category-location fl-wrap"><a href="#"><i class="fas fa-map-marker-alt"></i>
+                                W 85th St, New York, USA </a></div>
+                        <div class="widget-posts-descr-price"><span>Price: </span> ₹ 72.400</div>
+                        <div class="clear-wishlist"><i class="fal fa-trash-alt"></i></div>
+                    </div>
+                </li>
+                </ul>
+            </div>
+            <!-- widget-posts end-->
+    </div>
+    <!-- header-modal-container end-->
+    <div class="header-modal-top fl-wrap">
+        <a class="clear_wishlist color-bg" href="compare.html"><i class="fal fa-random"></i> Compare</a>
+    </div>
+    </div>
+    </div>
+    <!--tab end -->
+    </div>
+    <!--tabs end -->
+    </div>
+    </div>
+    <!--wishlist-wrap end -->
+    <!--header-opt-modal-->
+
+    <!--header-opt-modal end -->
+    </header>
+    <!-- header end  -->
+    <!-- wrapper  -->
+    <div id="wrapper">
+        <!-- dashbard-menu-wrap -->
+        <div class="dashbard-menu-overlay"></div>
+        <div class="dashbard-menu-wrap">
+            <div class="dashbard-menu-close"><i class="fal fa-times"></i></div>
+            <div class="dashbard-menu-container">
+                <!-- user-profile-menu-->
+                <div class="user-profile-menu">
+                    <h3>Main</h3>
+                    <ul class="no-list-style">
+                        <li><a href="{% url 'dashboard_add_listing' %}"><i class="fal fa-chart-line"></i>Dashboard</a>
+                        </li>
+                        <li><a href="{% url 'dashboard_mypropfile' %}"><i class="fal fa-user-edit"></i> Edit profile</a>
+                        </li>
+                        <li><a href="dashboard-messages.html"><i class="fal fa-envelope"></i> Messages
+                                <span>3</span></a></li>
+                    </ul>
+                </div>
+                <!-- user-profile-menu end-->
+                <!-- user-profile-menu-->
+                <div class="user-profile-menu">
+                    <h3>Listings</h3>
+                    <ul class="no-list-style">
+                        <li><a href="dashboard-listing-table.html"><i class="fal fa-th-list"></i> My listigs </a></li>
+                        <li><a href="dashboard-bookings.html"> <i class="fal fa-calendar-check"></i> Bookings
+                                <span>3</span></a></li>
+                        <li><a href="dashboard-review.html"><i class="fal fa-comments-alt"></i> Reviews <span>2</span>
+                            </a></li>
+                        <!-- <li><a href="{% url 'dashboard_add_listing' %}" class="user-profile-act"><i class="fal fa-file-plus"></i> Add New</a></li> -->
+                    </ul>
+                </div>
+                <!-- user-profile-menu end-->
+            </div>
+            <div class="dashbard-menu-footer">© Homeradar 2022 . All rights reserved.</div>
+        </div>
+        <!-- dashbard-menu-wrap end  -->
+        <div class="dashboard-content">
+            <div class="dashboard-menu-btn color-bg"><span><i class="fas fa-bars"></i></span>Dasboard Menu</div>
+            <div class="container dasboard-container">
+                <!-- dashboard-title -->
+                <!-- content -->
+                <!-- end message framework -->
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert {{ message.tags }}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
+                <!-- end message framework -->
+                <div class="dashboard-title fl-wrap">
+                    <div class="dashboard-title-item"><span>Add Listing</span></div>
+                    <div class="dashbard-menu-header">
+                        <div class="dashbard-menu-avatar fl-wrap">
+                            <img src="{% static 'images/avatar/1.jpg' %}" alt="">
+                            <h4>Welcome, <span>{{request.user|upper}}</span></h4>
+                        </div>
+                        <a href="{% url 'logout' %}" class="log-out-btn   tolt" data-microtip-position="bottom"
+                            data-tooltip="Log Out"><i class="far fa-power-off"></i></a>
+                    </div>
+                    <!--Tariff Plan menu-->
+                    <div class="tfp-det-container">
+                        <div class="tfp-btn"><span>Your Tariff Plan : </span> <strong>Extended</strong></div>
+                        <div class="tfp-det">
+                            <p>You Are on <a href="#">Extended</a> . Use link bellow to view details or upgrade. </p>
+                            <a href="#" class="tfp-det-btn color-bg">Details</a>
+                        </div>
+                    </div>
+                    <!--Tariff Plan menu end-->
+                </div>
+                <!-- dashboard-title end -->
+
+                    <div class="dasboard-wrapper fl-wrap no-pag">
+                        <!-- dasboard-widget-title -->
+                        <div class="dasboard-widget-title fl-wrap" id="sec1">
+                            <h5><i class="fas fa-info"></i>Provide details about the Property</h5>
+                        </div>
+
+                        <div class="dasboard-widget-box fl-wrap">
+                            <div class="custom-form">
+                                <div class="row">
+                                    {% comment %}
+                                    <div class="col-sm-4">
+                                        <label>Listing Title <span class="dec-icon"><i
+                                                    class="far fa-briefcase"></i></span></label>
+                                        <input type="text" placeholder="Name of your business" value="" />
+                                    </div>
+                                    {% endcomment %}
+
+                                    <div class="btn-group btn-group-toggle buildingtype" data-toggle="buttons">
+                                        <label class="btn btn-secondary active clickablebtn"
+                                            style="--bs-btn-active-bg: #0095ff; " id="option1resi" onclick="funct1()">
+                                            <input type="radio" style="display: none;" name="options"
+                                                autocomplete="off">
+                                            Residential 
+                                        </label>
+                                        <label class="btn btn-secondary clickablebtn"
+                                            style="--bs-btn-active-bg: #0095ff; " id="option2comm" onclick="funct3()">
+                                            <input type="radio" style="display: none;" name="options"
+                                                autocomplete="off">
+                                            Commercial
+                                        </label>
+                                        <label class="btn btn-secondary clickablebtn"
+                                            style="--bs-btn-active-bg: #0095ff; " id="option3pg" onclick="funct2()">
+                                            <input type="radio" style="display: none;" name="options"
+                                                autocomplete="off">
+                                            PG/Co-Living
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Residential  Start -->
+
+                    <form method="post" enctype="multipart/form-data" name="residentialdetails">{% csrf_token %}
+                        <div id="reidentialdetails" style="display: block;">
+
+                            <!-- dasboard-widget-title -->
+                            <div class="dasboard-widget-title dwb-mar fl-wrap">
+                                <h5><i class="fas fa-list"></i>Property Details</h5>
+                            </div>
+                            <!-- dasboard-widget-title end -->
+                            <!-- dasboard-widget-box  -->
+                            <div class="dasboard-widget-box   fl-wrap" style="display: block;">
+                                <div class="col-sm-4" id="listingType2" style="margin-bottom:4rem">
+                                    <div class="listsearch-input-item">
+                                        <label>Property Listing for</label>
+                                        <select data-placeholder="All Types" class="chosen-select no-search-select"
+                                            onchange="togglePropertyFor(this.value)">
+                                            <option disabled selected>All Types</option>
+                                            <option value="Rent"> Rent</option>
+                                            <option value="Sell">Sell</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="residentialType1" class="col-sm-4" style="display: none;">
+                                    <div class="listsearch-input-item">
+                                        <label>Property Type</label>
+                                        <div class="listsearch-input-item">
+                                            <select data-placeholder="Apartments" class="chosen-select no-search-select"
+                                                onchange="toggleresidentialproptype(this.value)">
+                                                <option disabled selected>All Categories</option>
+                                                <option value="apartment">Apartment</option>
+                                                <option value="plot">Plot</option>
+                                                <option value="villa">Villa</option>
+                                                <option value="independenthouse">Independent House</option>
+                                                <option value="independentfloor">Independent floor</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="residentialType2" class="col-sm-4" style="display: none;">
+                                    <div class="listsearch-input-item">
+                                        <label>Property Type</label>
+                                        <select data-placeholder="Apartments" class="chosen-select no-search-select"
+                                            onchange="toggleresidentialproptype2(this.value)">
+                                            <option disabled selected>All Categories</option>
+                                            <option value="apartment">Apartment</option>
+                                            <option value="villa">Villa</option>
+                                            <option value="independenthouse">Independent House</option>
+                                            <option value="independentfloor">Independent Floor</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="custom-form" id="residentialspropertydetails1">
+                                    <div id="transactiontype" style="display: none;">
+                                        <div class="clearfix"></div>
+                                        <label>Transaction Type: </label>
+                                        <div class=" add-list-tags fl-wrap">
+                                            <!-- Checkboxes -->
+                                            <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                                <li>
+                                                    <input id="restransactiontype1" type="radio"
+                                                        name="restransactiontype">
+                                                    <label for="restransactiontype">New Booking</label>
+                                                </li>
+                                                <li>
+                                                    <input id="restransactiontype2" type="radio"
+                                                        name="restransactiontype">
+                                                    <label for="restransactiontype2">Resale</label>
+                                                </li>
+                                            </ul>
+                                            <!-- Checkboxes end -->
+                                        </div>
+                                    </div>
+                                    <div id="constructiontype" style="display: none;">
+                                        <div class="clearfix"></div>
+                                        <label>Constuction Status: </label>
+                                        <div class=" add-list-tags fl-wrap">
+                                            <!-- Checkboxes -->
+                                            <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                                <li>
+                                                    <input id="constructiontype1" type="radio" name="constructiontype">
+                                                    <label for="constructiontype1">Ready To Move</label>
+                                                </li>
+                                                <li>
+                                                    <input id="constructiontype2" type="radio" name="constructiontype">
+                                                    <label for="constructiontype2">Under Construction</label>
+                                                </li>
+                                            </ul>
+                                            <!-- Checkboxes end -->
+                                        </div>
+                                    </div>
+
+
+                                    <div id="propertyage" style="display: none;">
+                                        <div class="clearfix"></div>
+                                        <label>Age of property: </label>
+                                        <div class=" add-list-tags fl-wrap">
+                                            <!-- Checkboxes -->
+                                            <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                                <li>
+                                                    <input id="propertyage1" type="radio" name="propertyage">
+                                                    <label for="propertyage1">0-1 Years</label>
+                                                </li>
+                                                <li>
+                                                    <input id="propertyage2" type="radio" name="propertyage">
+                                                    <label for="propertyage2">1-5 Years</label>
+                                                </li>
+                                                <li>
+                                                    <input id="propertyage3" type="radio" name="propertyage">
+                                                    <label for="propertyage3">5-10 years</label>
+                                                </li>
+                                                <li>
+                                                    <input id="propertyage4" type="radio" name="propertyage">
+                                                    <label for="propertyage4">10+ years</label>
+                                                </li>
+                                            </ul>
+                                            <!-- Checkboxes end -->
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                    <label>Furnished:</label>
+                                    <div class=" add-list-tags fl-wrap">
+                                        <!-- Checkboxes -->
+                                        <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                            <li>
+                                                <input id="furnishedtype1" type="radio" value="1" name="furnished">
+                                                <label for="furnishedtype1">Fully Furnished</label>
+                                            </li>
+                                            <li>
+                                                <input id="furnishedtype2" type="radio" value="2" name="furnished">
+                                                <label for="furnishedtype2">Semi-Furnished</label>
+                                            </li>
+                                            <li>
+                                                <input id="furnishedtype3" type="radio" value="3" name="furnished">
+                                                <label for="furnishedtype3">Non-Furnished</label>
+                                            </li>
+                                        </ul>
+                                        <!-- Checkboxes end -->
+                                    </div>
+
+
+                                    <div class="clearfix"></div>
+                                    <label>BHK: </label>
+                                    <div class=" add-list-tags fl-wrap">
+                                        <!-- Checkboxes -->
+                                        <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                            <li>
+                                                <input id="bhksize1" type="radio" name="bhksize"
+                                                    onclick="customInput1()">
+                                                <label for="bhksize1">1 BHK</label>
+                                            </li>
+                                            <li>
+                                                <input id="bhksize2" type="radio" name="bhksize"
+                                                    onclick="customInput1()">
+                                                <label for="bhksize2">2 BHK</label>
+                                            </li>
+                                            <li>
+                                                <input id="bhksize3" type="radio" name="bhksize"
+                                                    onclick="customInput1()">
+                                                <label for="bhksize3">3 BHK</label>
+                                            </li>
+                                            <li>
+                                                <input id="bhksize4" type="radio" name="bhksize"
+                                                    onclick="customInput1()">
+                                                <label for="bhksize4">4 BHK</label>
+                                            </li>
+                                            <li>
+                                                <input id="check-c20" type="radio" name="bhksize"
+                                                    onclick="customInput1()">
+                                                <label for="check-c
+                                            20">Custom</label>
+
+
+                                            </li>
+                                        </ul>
+                                        <div class="col-md-7" id="customBhk" style="display: none;">
+                                            <!-- <label> <span class="dec-icon"><i class="far fa-rupee-sign"></i></span></label> -->
+                                            <input type="text" placeholder=" Enter No. of Rooms " value=""
+                                                style="width: 21rem;" />
+                                        </div>
+                                        <!-- Checkboxes end -->
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                    <label>Amenities: </label>
+                                    <div class=" add-list-tags fl-wrap">
+                                        <!-- Checkboxes -->
+                                        <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                            <li>
+                                                <input id="amenitiestype1" type="checkbox" name="amenitiestype" checked>
+                                                <label for="amenitiestype1"> Wi Fi</label>
+                                            </li>
+                                            <li>
+                                                <input id="amenitiestype2" type="checkbox" name="amenitiestype" checked>
+                                                <label for="amenitiestype2">Pool</label>
+                                            </li>
+                                            <li>
+                                                <input id="amenitiestype3" type="checkbox" name="amenitiestype">
+                                                <label for="amenitiestype3"> Security</label>
+                                            </li>
+                                            <li>
+                                                <input id="amenitiestype4" type="checkbox" name="amenitiestype">
+                                                <label for="amenitiestype4"> Laundry Room</label>
+                                            </li>
+                                            <li>
+                                                <input id="amenitiestype5" type="checkbox" name="amenitiestype" checked>
+                                                <label for="amenitiestype5"> Equipped Kitchen</label>
+                                            </li>
+                                            <li>
+                                                <input id="amenitiestype6" type="checkbox" name="amenitiestype">
+                                                <label for="amenitiestype6">Air Conditioning</label>
+                                            </li>
+
+                                        </ul>
+                                        <!-- Checkboxes end -->
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                    <label>Reserved Parking: </label>
+                                    <div class=" add-list-tags fl-wrap">
+                                        <!-- Checkboxes -->
+                                        <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                            <li>
+                                                <input id="parkingtype1" type="radio" name="parkingtype">
+                                                <label for="parkingtype1">Covered Parking</label>
+                                            </li>
+                                            <li>
+                                                <input id="parkingtype2" type="radio" name="parkingtype">
+                                                <label for="parkingtype2">Open Parking</label>
+                                            </li>
+                                            <li>
+                                                <input id="parkingtype3" type="radio" name="parkingtype">
+                                                <label for="parkingtype3">Both</label>
+                                            </li>
+                                        </ul>
+                                        <!-- Checkboxes end -->
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                    <label>Availability Status: </label>
+                                    <div class=" add-list-tags fl-wrap">
+                                        <!-- Checkboxes -->
+                                        <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                            <li>
+                                                <input id="availablestatus1" type="radio" name="availablestatus"
+                                                    onclick="propertyavailable1()">
+                                                <label for="availablestatus1">Ready to move</label>
+                                            </li>
+                                            <li>
+                                                <input id="availablestatus2" type="radio" name="availablestatus"
+                                                    onclick="propertyavailable1()">
+                                                <label for="availablestatus2">Under Construction</label>
+                                            </li>
+                                        </ul>
+
+                                        <div id="sellpropertyage2" style="display: none;">
+                                            <div class="clearfix"></div>
+                                            <label>Age of property: </label>
+                                            <div class=" add-list-tags fl-wrap">
+                                                <!-- Checkboxes -->
+                                                <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                                    <li>
+                                                        <input id="propertyage2.1" type="radio" name="propertyage2">
+                                                        <label for="propertyage2.1">0-1 Years</label>
+                                                    </li>
+                                                    <li>
+                                                        <input id="propertyage2.2" type="radio" name="propertyage2">
+                                                        <label for="propertyage2.2">1-5 Years</label>
+                                                    </li>
+                                                    <li>
+                                                        <input id="propertyage3.2" type="radio" name="propertyage2">
+                                                        <label for="propertyage3.2">5-10 years</label>
+                                                    </li>
+                                                    <li>
+                                                        <input id="propertyage4.2" type="radio" name="propertyage2">
+                                                        <label for="propertyage4.2">10+ years</label>
+                                                    </li>
+                                                </ul>
+                                                <!-- Checkboxes end -->
+                                            </div>
+                                        </div>
+
+                                        <div id="possessiondate" style="display: none;">
+                                            <div class="col-sm-6">
+                                                <label>Possession Date : </label>
+                                                <input class="divdate" type="date" value="" />
+                                            </div>
+                                        </div>
+
+                                        <!-- Checkboxes end -->
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                    <label>Preferred Tenant Type </label>
+                                    <div class=" add-list-tags fl-wrap">
+                                        <!-- Checkboxes -->
+                                        <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                            <li>
+                                                <input id="tenanttype1" type="radio" name="tenanttype">
+                                                <label for="tenanttype">Family</label>
+                                            </li>
+                                            <li>
+                                                <input id="tenanttype2" type="radio" name="tenanttype">
+                                                <label for="tenanttype2">Bachelors</label>
+                                            </li>
+                                            <li>
+                                                <input id="tenanttype3" type="radio" name="tenanttype">
+                                                <label for="tenanttype3">Company</label>
+                                            </li>
+                                        </ul>
+                                        <!-- Checkboxes end -->
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <!-- <label>Area: <span class="dec-icon"><i class="far fa-sort-size-down-alt"></i></span></label>
+                                                    <input type="text" placeholder="House Area" value=""/>											 -->
+                                                    <label>Balconies: <span class="dec-icon"><i
+                                                                class="far fa-clouds"></i></span></label>
+                                                    <input type="text" placeholder="No. of Balconies" value="" />
+
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <!-- <label>Bedrooms: <span class="dec-icon"><i class="far fa-bed"></i></span></label>
+                                                    <input type="text" placeholder="No. of Bedrooms" value=""/> -->
+                                                    <label>Bathrooms: <span class="dec-icon"><i
+                                                                class="far fa-bath"></i></span></label>
+                                                    <input type="text" placeholder="No. of Bathroom" value="" />
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- dasboard-widget-title -->
+
+                                    <div class="clearfix"></div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <label>City</label>
+                                            <div class="listsearch-input-item">
+                                                <select data-placeholder="Apartments"
+                                                    class="chosen-select no-search-select">
+                                                    <option>All Cities</option>
+                                                    <option>New York</option>
+                                                    <option>London</option>
+                                                    <option>Paris</option>
+                                                    <option>Kiev</option>
+                                                    <option>Moscow</option>
+                                                    <option>Dubai</option>
+                                                    <option>Rome</option>
+                                                    <option>Beijing</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label>Project/Building Name </label>
+                                            <input style="padding-left: 10px !important" type="text"
+                                                placeholder="Start typing building/project name...." value="" />
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label>Locality </label>
+                                            <input type="text" placeholder="Start typing Locality name...." value="" />
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label>Available From : </label>
+                                            <input class="divdate" type="date" value="" />
+                                        </div>
+                                        <!-- <div id="locationdetails" style="display: none;">
+                                            <div class="col-sm-6">
+                                                <label>Flat No.</label>
+                                                <input style="padding-left: 10px !important" type="text"
+                                                    placeholder="Enter Your Flat No." value="" />
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label> Floor No. </label>
+                                                <input style="padding-left: 10px !important" type="text"
+                                                    placeholder=" Enter Your Floor No." value="" />
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label>Total Floors </label>
+                                                <input style="padding-left: 10px !important" type="text"
+                                                    placeholder="Enter Total Floors" value="" />
+                                            </div>
+                                        </div> -->
+                                    </div>
+
+                                </div>
+                                <!-- dasboard-widget-box  end-->
+
+                                <!-- plot details start -->
+                                <div class="custom-form" id="residentialspropertydetails2" style="display: none;">
+
+                                    <div class="clearfix"></div>
+                                    <label>Transaction Type: </label>
+                                    <div class=" add-list-tags fl-wrap">
+                                        <!-- Checkboxes -->
+                                        <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                            <li>
+                                                <input id="restransactiontype1" type="radio" name="restransactiontype2">
+                                                <label for="restransactiontype">New Booking</label>
+                                            </li>
+                                            <li>
+                                                <input id="restransactiontype2" type="radio" name="restransactiontype2">
+                                                <label for="restransactiontype2">Resale</label>
+                                            </li>
+                                        </ul>
+                                        <!-- Checkboxes end -->
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-8">
+                                            <div class="row">
+                                                <label>Possession Status: </label>
+                                                <div class=" add-list-tags fl-wrap">
+                                                    <!-- Checkboxes -->
+                                                    <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                                        <li>
+                                                            <input id="resipossessionstatus1" type="radio"
+                                                                name="resipossessionstatus"
+                                                                onclick="propertyavailable3()">
+                                                            <label for="resipossessionstatus1">Immediate</label>
+                                                        </li>
+                                                        <li>
+                                                            <input id="resipossessionstatus2" type="radio"
+                                                                name="resipossessionstatus"
+                                                                onclick="propertyavailable3()">
+                                                            <label for="resipossessionstatus2">In Future</label>
+                                                        </li>
+                                                    </ul>
+                                                    <div id="plotpropertyage3" style="display: none;">
+                                                        <div class="clearfix"></div>
+                                                        <label>Age of property: </label>
+                                                        <div class=" add-list-tags fl-wrap">
+                                                            <!-- Checkboxes -->
+                                                            <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                                                <li>
+                                                                    <input id="plotpropertyage3.1" type="radio"
+                                                                        name="plotpropertyage3">
+                                                                    <label for="plotpropertyage3.1">0-1 Years</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input id="plotpropertyage3.2" type="radio"
+                                                                        name="plotpropertyage3">
+                                                                    <label for="plotpropertyage3.2">1-5 Years</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input id="plotpropertyage3.3" type="radio"
+                                                                        name="plotpropertyage3">
+                                                                    <label for="plotpropertyage3.3">5-10 years</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input id="plotpropertyage3.4" type="radio"
+                                                                        name="plotpropertyage3">
+                                                                    <label for="plotpropertyage3.4">10+ years</label>
+                                                                </li>
+                                                            </ul>
+                                                            <!-- Checkboxes end -->
+                                                        </div>
+                                                    </div>
+
+                                                    <div id="plotpossessiondate" style="display: none;">
+                                                        <div class="col-sm-6">
+                                                            <label>Possession Date : </label>
+                                                            <input class="divdate" type="date" value="" />
+                                                        </div>
+                                                    </div>
+                                                    <!-- Checkboxes end -->
+                                                </div>
+                                                <div class="col-sm-10">
+                                                    <label>Plot Area: <span class="dec-icon"><i
+                                                                class="far fa-rupee-sign"></i></span></label>
+                                                    <input type="text" placeholder="in Sq. Ft." value="" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-10">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <label>Length: <span class="dec-icon"><i
+                                                                class="far fa-ruler-vertical"></i></span></label>
+                                                    <input type="text" placeholder="in feet" value="" />
+
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label>Width: <span class="dec-icon"><i
+                                                                class="far fa-ruler-horizontal"></i></span></label>
+                                                    <input type="text" placeholder="in feet" value="" />
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-10">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <label>Width of Facing Road: <span class="dec-icon"><i
+                                                                class="far fa-ruler-horizontal"></i></span></label>
+                                                    <input type="text" placeholder="in feet" value="" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <label>City</label>
+                                            <div class="listsearch-input-item">
+                                                <select data-placeholder="Apartments"
+                                                    class="chosen-select no-search-select">
+                                                    <option>All Cities</option>
+                                                    <option>New York</option>
+                                                    <option>London</option>
+                                                    <option>Paris</option>
+                                                    <option>Kiev</option>
+                                                    <option>Moscow</option>
+                                                    <option>Dubai</option>
+                                                    <option>Rome</option>
+                                                    <option>Beijing</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label>Project/Building Name </label>
+                                            <input style="padding-left: 10px !important" type="text"
+                                                placeholder="Start typing building/project name...." value="" />
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label>Locality </label>
+                                            <input style="padding-left: 10px !important" type="text"
+                                                placeholder="Start typing Locality name...." value="" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- plot details end -->
+                            </div>
+                            <!-- dasboard-widget-box  end-->
+                            <!-- dashboard pricing part -->
+                            <!-- dasboard-widget-title -->
+                            <div class="dasboard-widget-title dwb-mar fl-wrap">
+                                <h5><i class="fas fa-sliders-h"></i>Pricing Details</h5>
+                            </div>
+                            <!-- dasboard-widget-title end -->
+                            <!-- dasboard-widget-box  -->
+                            <div class="dasboard-widget-box   fl-wrap ">
+                                <div class="custom-form add_room-item-wrap">
+                                    <div class="add_room-container fl-wrap">
+                                        <!-- add_room-item   -->
+                                        <div class="add_room-item fl-wrap">
+                                            <span class="remove-rp tolt" data-microtip-position="left"
+                                                data-tooltip="Remove"><i class="fal fa-times-circle"></i></span>
+                                            <div class="row">
+                                                <div class="col-md-7">
+                                                    <div class="row">
+                                                        <div class="col-md-7">
+                                                            <label id="rentsellprice">Monthly Rent <span
+                                                                    class="dec-icon"><i
+                                                                        class="far fa-rupee-sign"></i></span></label>
+                                                            <input type="text" placeholder=" Enter Price " value="" />
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <div class="row">
+                                                        <div class="col-md-9">
+                                                            <label> Maintainance Charges (per month) <span
+                                                                    class="dec-icon"><i
+                                                                        class="far fa-rupee-sign"></i></span></label>
+                                                            <input type="text" placeholder=" Enter Amount " value="" />
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class=" add-list-tags fl-wrap">
+                                                        <!-- Checkboxes -->
+                                                        <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                                            <li>
+                                                                <input id="inclusivePrice1" type="checkbox"
+                                                                    name="inclusivePrice" checked>
+                                                                <label for="inclusivePrice1">All inclusive price</label>
+                                                            </li>
+                                                            <li>
+                                                                <input id="taxadded1" type="checkbox" name="taxadded"
+                                                                    checked>
+                                                                <label for="taxadded1">Tax and Govt. Charges
+                                                                    excluded</label>
+                                                            </li>
+                                                            <li>
+                                                                <input id="pricenegotiable" type="checkbox"
+                                                                    name="pricenegotiable">
+                                                                <label for="pricenegotiable"> Price Negotiable</label>
+                                                            </li>
+                                                        </ul>
+                                                        <!-- Checkboxes end -->
+                                                    </div>
+                                                </div>
+
+
+
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <label>Do You Charge Brokerage </label>
+                                            <div class=" add-list-tags fl-wrap">
+                                                <!-- Checkboxes -->
+                                                <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                                    <li>
+                                                        <input id="brokeragetype1" type="radio" name="brokeragetype"
+                                                            onclick="customInput2()">
+                                                        <label for="brokeragetype1">No</label>
+                                                    </li>
+                                                    <li>
+                                                        <input id="brokeragetype2" type="radio" name="brokeragetype"
+                                                            onclick="customInput2()">
+                                                        <label for="brokeragetype2">15 days</label>
+                                                    </li>
+                                                    <li>
+                                                        <input id="brokeragetype3" type="radio" name="brokeragetype"
+                                                            onclick="customInput2()">
+                                                        <label for="brokeragetype3">30 days</label>
+                                                    </li>
+                                                    <li>
+                                                        <input id="check-c30" type="radio" name="brokeragetype"
+                                                            onclick="customInput2()">
+                                                        <label for="check-c30">Custom</label>
+                                                    </li>
+
+
+                                                </ul>
+
+                                                <div class="col-md-7" id="customBrkg" style="display: none;">
+                                                    <label> <span class="dec-icon"><i
+                                                                class="far fa-rupee-sign"></i></span></label>
+                                                    <input type="text" placeholder=" Brokerage (in rupees) " value=""
+                                                        style="width: 21rem;" />
+                                                </div>
+                                                <!-- Checkboxes end -->
+                                            </div>
+                                            <label>Built Up Area: <span class="dec-icon"><i
+                                                        class="far fa-sort-size-down-alt"></i></span></label>
+                                            <input type="text" style=" width: 32%;" placeholder="in SqFt." value="" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dasboard-widget-title dwb-mar fl-wrap" >
+                                <h5><i class="fas fa-image"></i>Property Picture</h5>
+                              </div>
+                            <div class="dasboard-widget-box fl-wrap ">
+                                <div class="custom-form">
+                                  <span style="color: white;">Accepted formats are .jpg, .gif, .bmp, .JPG, .JPEG, .PNG & .png and Maximum size allowed 10 MB 
+                                    <strong style="color: #0095ff;"> (Upload Minimum 5 Photos) </strong></span>
+                                  <div class="clearfix"></div>
+                                  <div class="listsearch-input-item fl-wrap picturesetting">
+                                      <div class="fu-text">
+                                        <div class="photoUpload-files fl-wrap"></div>
+                                      </div>
+                                      <input type="file" name="prop_img" style="color: white;" class="upload" accept=".jpg, .jpeg, .png, .gif, .bmp" multiple>
+                                      <span style="color: white;"><i  class="far fa-cloud-upload-alt"></i> Click here or drop files to upload</span>
+                                  </div>
+                                </div>
+                                <div class="image-preview"></div>
+                              </div>
+                              <button type="submit" class="btn btnbgcolor float-btn">Save Changes
+                              </button>
+                        </div>
+                        </form>
+                        <!-- Residential  End -->
+                        <!-- PG-CoLiving Start -->
+                        <form method="post" enctype="multipart/form-data" name="pgdetails">
+                        <div id="pgcolivingdetails" style="display: none;">
+
+                            <div class="dasboard-widget-title dwb-mar fl-wrap" id="sec4">
+                                <h5><i class="fas fa-list"></i>PG Profile</h5>
+                            </div>
+                            <!-- dasboard-widget-title end -->
+
+                            <!-- dasboard-widget-box  -->
+                            <div class="dasboard-widget-box  fl-wrap">
+                                <div class="custom-form">
+
+                                    <div class="clearfix"></div>
+                                    <div class="custom-form">
+                                        <div class="clearfix"></div>
+
+                                        <div class="clearfix"></div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <label>PG Name </label>
+                                                <input style="padding-left: 10px !important" type="text"
+                                                    placeholder="Enter Your PG name" value="" />
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label>Total Beds: </label>
+                                                <input style="padding-left: 10px !important" type="text"
+                                                    placeholder="Enter No. of Beds" value="" />
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <label>PG is For </label>
+                                    <div class=" add-list-tags fl-wrap">
+                                        <!-- Checkboxes -->
+                                        <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                            <li>
+                                                <input id="pgfor1" type="checkbox" name="pgfor">
+                                                <label for="pgfor1">Girls</label>
+                                            </li>
+                                            <li>
+                                                <input id="pgfor2" type="checkbox" name="pgfor">
+                                                <label for="pgfor2">Boys</label>
+                                            </li>
+
+                                        </ul>
+                                        <!-- Checkboxes end -->
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                    <label>Best Suited For </label>
+                                    <div class=" add-list-tags fl-wrap">
+                                        <!-- Checkboxes -->
+                                        <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                            <li>
+                                                <input id="pgbestfor1" type="checkbox" name="pgbestfor">
+                                                <label for="pgbestfor1">Students</label>
+                                            </li>
+                                            <li>
+                                                <input id="pgbestfor" type="checkbox" name="pgbestfor">
+                                                <label for="pgbestfor">Professionals</label>
+                                            </li>
+                                        </ul>
+                                        <!-- Checkboxes end -->
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                    <label>Meals Available </label>
+                                    <div class=" add-list-tags fl-wrap">
+                                        <!-- Checkboxes -->
+                                        <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                            <li>
+                                                <input id="mealsavailable1" type="radio" name="mealsavailable">
+                                                <label for="mealsavailable1">Yes</label>
+                                            </li>
+                                            <li>
+                                                <input id="mealsavailable2" type="radio" name="mealsavailable">
+                                                <label for="mealsavailable2">No</label>
+                                            </li>
+                                        </ul>
+                                        <!-- Checkboxes end -->
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                    <label>Amenities: </label>
+                                    <div class=" add-list-tags fl-wrap">
+                                        <!-- Checkboxes -->
+                                        <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                            <li>
+                                                <input id="pgamenities1" type="checkbox" name="pgamenities" checked>
+                                                <label for="pgamenities1">Air conditioner</label>
+                                            </li>
+                                            <li>
+                                                <input id="pgamenities2" type="checkbox" name="pgamenities" checked>
+                                                <label for="pgamenities2">Air conditioner</label>
+                                            </li>
+                                            <li>
+                                                <input id="pgamenities3" type="checkbox" name="pgamenities" checked>
+                                                <label for="pgamenities3">Water Cooler</label>
+                                            </li>
+                                            <li>
+                                                <input id="pgamenities4" type="checkbox" name="pgamenities">
+                                                <label for="pgamenities4">Laundry</label>
+                                            </li>
+                                            <li>
+                                                <input id="pgamenities5" type="checkbox" name="pgamenities">
+                                                <label for="pgamenities5"> GYM</label>
+                                            </li>
+                                            <li>
+                                                <input id="pgamenities6" type="checkbox" name="pgamenities">
+                                                <label for="pgamenities6">Fridge</label>
+                                            </li>
+                                            <li>
+                                                <input id="pgamenities7" type="checkbox" name="pgamenities" checked>
+                                                <label for="pgamenities7">Room Cleaning</label>
+                                            </li>
+                                            <li>
+                                                <input id="pgamenities8" type="checkbox" name="pgamenities">
+                                                <label for="pgamenities8">Parking</label>
+                                            </li>
+                                        </ul>
+                                        <!-- Checkboxes end -->
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <label>Notice Period <span class="dec-icon"><i
+                                                                class="far fa-sort-size-down-alt"></i></span></label>
+                                                    <input type="text" placeholder="Enter No. of Days" value="" />
+
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label>Lock in Period <span class="dec-icon"><i
+                                                                class="far fa-sort-size-down-alt"></i></span></label>
+                                                    <input type="text" placeholder="Enter No. of Days" value="" />
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                    <label>Common Areas </label>
+                                    <div class=" add-list-tags fl-wrap">
+                                        <!-- Checkboxes -->
+                                        <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                            <li>
+                                                <input id="commomareas1" type="checkbox" name="commomareas">
+                                                <label for="commomareas1">Living Room</label>
+                                            </li>
+                                            <li>
+                                                <input id="commomareas2" type="checkbox" name="commomareas">
+                                                <label for="commomareas2">Kitchen</label>
+                                            </li>
+                                            <li>
+                                                <input id="commomareas3" type="checkbox" name="commomareas">
+                                                <label for="commomareas3">Dining Hall</label>
+                                            </li>
+                                            <li>
+                                                <input id="commomareas4" type="checkbox" name="commomareas">
+                                                <label for="commomareas4">Study Room / Library</label>
+                                            </li>
+                                            <li>
+                                                <input id="commomareas5" type="checkbox" name="commomareas">
+                                                <label for="commomareas5">Bpropertymanagedut Room</label>
+                                            </li>
+                                        </ul>
+                                        <!-- Checkboxes end -->
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <label>Property Managed By </label>
+                                    <div class=" add-list-tags fl-wrap">
+                                        <!-- Checkboxes -->
+                                        <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                            <li>
+                                                <input id="propertymanaged1" type="radio" name="propertymanaged"
+                                                    checked>
+                                                <label for="propertymanaged1"> Landlord</label>
+                                            </li>
+                                            <li>
+                                                <input id="propertymanaged2" type="radio" name="propertymanaged"
+                                                    checked>
+                                                <label for="propertymanaged2">Caretaker</label>
+                                            </li>
+                                            <li>
+                                                <input id="propertymanaged3" type="radio" name="propertymanaged">
+                                                <label for="propertymanaged3"> Dedicated Professional</label>
+                                            </li>
+                                        </ul>
+                                        <!-- Checkboxes end -->
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                    <label>Property Manager Stays at Property </label>
+                                    <div class=" add-list-tags fl-wrap">
+                                        <!-- Checkboxes -->
+                                        <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                            <li>
+                                                <input id="managerstays1" type="radio" name="managerstays">
+                                                <label for="managerstays1">Yes</label>
+                                            </li>
+                                            <li>
+                                                <input id="managerstays2" type="radio" name="managerstays">
+                                                <label for="managerstays2">No</label>
+                                            </li>
+                                        </ul>
+                                        <!-- Checkboxes end -->
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <label>PG Rules: </label>
+                                    <div class="clearfix"></div>
+                                    <label>Non Veg Allowed: </label>
+
+                                    <div class=" add-list-tags fl-wrap">
+                                        <!-- Checkboxes -->
+                                        <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                            <li>
+                                                <input id="nonvegallowed1" type="radio" name="nonvegallowed">
+                                                <label for="nonvegallowed1">Yes</label>
+                                            </li>
+                                            <li>
+                                                <input id="nonvegallowed2" type="radio" name="nonvegallowed">
+                                                <label for="nonvegallowed2">No</label>
+                                            </li>
+                                        </ul>
+                                        <!-- Checkboxes end -->
+                                    </div>
+                                    <label>Opposite Gender Allowed: </label>
+
+                                    <div class=" add-list-tags fl-wrap">
+                                        <!-- Checkboxes -->
+                                        <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                            <li>
+                                                <input id="genderallowed1" type="radio" name="genderallowed">
+                                                <label for="genderallowed1">Yes</label>
+                                            </li>
+                                            <li>
+                                                <input id="genderallowed2" type="radio" name="genderallowed">
+                                                <label for="genderallowed2">No</label>
+                                            </li>
+                                        </ul>
+                                        <!-- Checkboxes end -->
+                                    </div>
+                                    <label>Any Time Allowed: </label>
+
+                                    <div class=" add-list-tags fl-wrap">
+                                        <!-- Checkboxes -->
+                                        <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                            <li>
+                                                <input id="timeallowed1" type="radio" name="timeallowed">
+                                                <label for="timeallowed1">Yes</label>
+                                            </li>
+                                            <li>
+                                                <input id="timeallowed2" type="radio" name="timeallowed">
+                                                <label for="timeallowed2">No</label>
+                                            </li>
+                                        </ul>
+                                        <!-- Checkboxes end -->
+                                    </div>
+                                    <label>Visitors Allowed: </label>
+
+                                    <div class=" add-list-tags fl-wrap">
+                                        <!-- Checkboxes -->
+                                        <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                            <li>
+                                                <input id="visitorsallowed1" type="radio" name="visitorsallowed">
+                                                <label for="visitorsallowed1">Yes</label>
+                                            </li>
+                                            <li>
+                                                <input id="visitorsallowed2" type="radio" name="visitorsallowed">
+                                                <label for="visitorsallowed2">No</label>
+                                            </li>
+                                        </ul>
+                                        <!-- Checkboxes end -->
+                                    </div>
+                                    <label>Guardian Allowed: </label>
+
+                                    <div class=" add-list-tags fl-wrap">
+                                        <!-- Checkboxes -->
+                                        <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                            <li>
+                                                <input id="guardiansallowed1" type="radio" name="guardiansallowed">
+                                                <label for="guardiansallowed1">Yes</label>
+                                            </li>
+                                            <li>
+                                                <input id="guardiansallowed2" type="radio" name="guardiansallowed">
+                                                <label for="guardiansallowed2">No</label>
+                                            </li>
+                                        </ul>
+                                        <!-- Checkboxes end -->
+                                    </div>
+                                    <label>Drinking Allowed: </label>
+
+                                    <div class=" add-list-tags fl-wrap">
+                                        <!-- Checkboxes -->
+                                        <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                            <li>
+                                                <input id="drinkingallowed1" type="radio" name="drinkingallowed">
+                                                <label for="drinkingallowed1">Yes</label>
+                                            </li>
+                                            <li>
+                                                <input id="drinkingallowed2" type="radio" name="drinkingallowed">
+                                                <label for="drinkingallowed2">No</label>
+                                            </li>
+                                        </ul>
+                                        <!-- Checkboxes end -->
+                                    </div>
+                                    <label>Smoking Allowed: </label>
+
+                                    <div class=" add-list-tags fl-wrap">
+                                        <!-- Checkboxes -->
+                                        <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                            <li>
+                                                <input id="smokingallowed1" type="radio" name="smokingallowed">
+                                                <label for="smokingallowed1">Yes</label>
+                                            </li>
+                                            <li>
+                                                <input id="smokingallowed2" type="radio" name="smokingallowed">
+                                                <label for="smokingallowed2">No</label>
+                                            </li>
+                                        </ul>
+                                        <!-- Checkboxes end -->
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <label>City</label>
+                                            <div class="listsearch-input-item">
+                                                <select data-placeholder="Apartments"
+                                                    class="chosen-select no-search-select">
+                                                    <option>All Cities</option>
+                                                    <option>New York</option>
+                                                    <option>London</option>
+                                                    <option>Paris</option>
+                                                    <option>Kiev</option>
+                                                    <option>Moscow</option>
+                                                    <option>Dubai</option>
+                                                    <option>Rome</option>
+                                                    <option>Beijing</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label>Project/Building Name </label>
+                                            <input style="padding-left: 10px !important" type="text"
+                                                placeholder="Start typing building/project name...." value="" />
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label>Locality </label>
+                                            <input style="padding-left: 10px !important" type="text"
+                                                placeholder="Start typing Locality name...." value="" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- dasboard-widget-title -->
+                                <div class="dasboard-widget-title dwb-mar fl-wrap" id="sec6">
+                                    <h5><i class="fas fa-ruler-combined"></i>Rooms Details </h5>
+
+                                </div>
+                                <!-- dasboard-widget-title end -->
+                                <!-- dasboard-widget-box  -->
+                                <div class="dasboard-widget-box   fl-wrap">
+                                    <div class="custom-form add_room-item-wrap">
+                                        <div class="add_room-container fl-wrap">
+                                            <!-- add_room-item   -->
+                                            <div class="add_room-item fl-wrap">
+                                                <span class="remove-rp tolt" data-microtip-position="left"
+                                                    data-tooltip="Remove"><i class="fal fa-times-circle"></i></span>
+                                                <div class="row">
+                                                    <div class="col-sm-7">
+                                                        <div class="row">
+                                                            <label>Room Type: </label>
+                                                            <div class=" add-list-tags fl-wrap">
+                                                                <!-- Checkboxes -->
+                                                                <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                                                    <li>
+                                                                        <input id="pgroomtype1" type="radio"
+                                                                            name="pgroomtype">
+                                                                        <label for="pgroomtype1">Single</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <input id="pgroomtype2" type="radio"
+                                                                            name="pgroomtype">
+                                                                        <label for="pgroomtype2">Double</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <input id="pgroomtype3" type="radio"
+                                                                            name="pgroomtype">
+                                                                        <label for="pgroomtype3">Triple</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <input id="pgroomtype4" type="radio"
+                                                                            name="pgroomtype">
+                                                                        <label for="pgroomtype4">3+ Sharing</label>
+                                                                    </li>
+                                                                </ul>
+                                                                <!-- Checkboxes end -->
+                                                            </div>
+
+                                                            <div class="col-md-6">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <label id="rentsellprice">Expected Rent <span
+                                                                                class="dec-icon"><i
+                                                                                    class="far fa-rupee-sign"></i></span></label>
+                                                                        <input type="text" placeholder=" Enter Price "
+                                                                            value="" />
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="row">
+                                                                    <div class="col-md-10">
+                                                                        <label> Security Deposit <span
+                                                                                class="dec-icon"><i
+                                                                                    class="far fa-rupee-sign"></i></span></label>
+                                                                        <input type="text" placeholder=" Enter Amount "
+                                                                            value="" />
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <label>Facilities Offered: </label>
+                                                        <div class=" add-list-tags fl-wrap">
+                                                            <!-- Checkboxes -->
+                                                            <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                                                <li>
+                                                                    <input id="pgfeatures1" type="checkbox"
+                                                                        name="pgfeatures" checked>
+                                                                    <label for="pgfeatures1">Personal Cupboard</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input id="pgfeatures2" type="checkbox"
+                                                                        name="pgfeatures">
+                                                                    <label for="pgfeatures2">Tv in Room</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input id="pgfeatures3" type="checkbox"
+                                                                        name="pgfeatures" checked>
+                                                                    <label for="pgamenities3"> Table Chair</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input id="pgfeatures4" type="checkbox"
+                                                                        name="pgfeatures" checked>
+                                                                    <label for="pgfeatures4">Attached Bathroom</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input id="pgfeatures5" type="checkbox"
+                                                                        name="pgfeatures">
+                                                                    <label for="pgfeatures5">AC</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input id="pgfeatures6" type="checkbox"
+                                                                        name="pgfeatures">
+                                                                    <label for="pgfeatures6">Meals Included</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input id="pgfeatures7" type="checkbox"
+                                                                        name="pgfeatures">
+                                                                    <label for="pgfeatures7">Attached Balcony</label>
+                                                                </li>
+
+                                                            </ul>
+                                                            <!-- Checkboxes end -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--add_room-item end  -->
+                                        </div>
+                                        <a href="#" class="add-room-item">Add New <i class="fal fa-plus"></i> </a>
+                                    </div>
+                                </div>
+                                <!-- dasboard-widget-box  end-->
+
+                            </div>
+                            <!-- dasboard-widget-box  end-->
+
+                        </div>
+                        </form>
+                        <!-- PG-CoLiving End -->
+
+                        <!-- commercial start -->
+
+                        <form action="#" method="post" name="commercialdetails">
+                        <div id="commercialdetails" style="display: none;">
+
+                            <div class="dasboard-widget-title dwb-mar fl-wrap">
+                                <h5><i class="fas fa-list"></i>Property Details</h5>
+                            </div>
+                            <div class="dasboard-widget-box   fl-wrap" style="display: block;">
+
+                                <div class="col-sm-4" id="listingType2" style="margin-bottom:4rem">
+
+                                    <div class="listsearch-input-item">
+                                        <label>Property Listing for</label>
+                                        <select data-placeholder="All Types" class="chosen-select no-search-select"
+                                            onchange="toggleCommercialPropertyFor(this.value)">
+                                            <option>All Types</option>
+                                            <option value="Rent"> Rent</option>
+                                            <option value="Sell">Sell</option>
+
+                                        </select>
+
+                                    </div>
+                                </div>
+
+
+
+                                <div id="commercialType" class="col-sm-4" style="display: none;">
+
+                                    <div class="listsearch-input-item">
+                                        <label>Property Type</label>
+                                        <select data-placeholder="Apartments" class="chosen-select no-search-select"
+                                            onchange="toggleCommercialPropertyType(this.value)">
+                                            <option disabled selected>All Categories</option>
+                                            <option value="office">Office</option>
+                                            <option value="retailshop">Retail Shop</option>
+                                            <option value="showroom">Showroom</option>
+                                            <option value="warehouse">Warehouse</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="custom-form">
+
+                                    <div class="clearfix"></div>
+                                    <label>Posession Status: </label>
+                                    <div class=" add-list-tags fl-wrap">
+                                        <!-- Checkboxes -->
+                                        <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                            <li>
+                                                <input id="commposessionstatus1" type="radio" name="commposessionstatus"
+                                                    onclick="propertyavailable2()">
+                                                <label for="commposessionstatus1">Ready to Move</label>
+                                            </li>
+                                            <li>
+                                                <input id="commposessionstatus2" type="radio" name="commposessionstatus"
+                                                    onclick="propertyavailable2()">
+                                                <label for="commposessionstatus2">Under Construction</label>
+                                            </li>
+
+                                        </ul>
+                                        <div id="commsellpropertyage2" style="display: none;">
+                                            <div class="clearfix"></div>
+                                            <label>Age of property: </label>
+                                            <div class=" add-list-tags fl-wrap">
+                                                <!-- Checkboxes -->
+                                                <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                                    <li>
+                                                        <input id="commpropertyage2.1" type="radio" name="propertyage2">
+                                                        <label for="commpropertyage2.1">0-1 Years</label>
+                                                    </li>
+                                                    <li>
+                                                        <input id="commpropertyage2.2" type="radio" name="propertyage2">
+                                                        <label for="commpropertyage2.2">1-5 Years</label>
+                                                    </li>
+                                                    <li>
+                                                        <input id="commpropertyage3.2" type="radio" name="propertyage2">
+                                                        <label for="commpropertyage3.2">5-10 years</label>
+                                                    </li>
+                                                    <li>
+                                                        <input id="commpropertyage4.2" type="radio" name="propertyage2">
+                                                        <label for="commpropertyage4.2">10+ years</label>
+                                                    </li>
+                                                </ul>
+                                                <!-- Checkboxes end -->
+                                            </div>
+                                            <div id="availablefrom" style="display: none;">
+                                                <div class="col-sm-6">
+                                                    <label>Available From : </label>
+                                                    <input class="divdate" type="date" value="" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="commpossessiondate" style="display: none;">
+                                            <div class="col-sm-6">
+                                                <label>Possession Date : </label>
+                                                <input class="divdate" type="date" value="" />
+                                            </div>
+                                        </div>
+
+
+                                        <!-- Checkboxes end -->
+                                    </div>
+
+
+                                    <div id="zonetype" style="display: block;">
+                                        <div class="clearfix"></div>
+                                        <label>Zone Type: </label>
+                                        <div class=" add-list-tags fl-wrap">
+                                            <!-- Checkboxes -->
+                                            <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                                <li>
+                                                    <input id="zonestatus1" type="radio" name="zonestatus">
+                                                    <label for="zonestatus1">Industrial</label>
+                                                </li>
+                                                <li>
+                                                    <input id="zonestatus2" type="radio" name="zonestatus">
+                                                    <label for="zonestatus2">Commercial</label>
+                                                </li>
+                                                <li>
+                                                    <input id="zonestatus3" type="radio" name="zonestatus">
+                                                    <label for="zonestatus3">Residential</label>
+                                                </li>
+                                                <li>
+                                                    <input id="zonestatus4" type="radio" name="zonestatus">
+                                                    <label for="zonestatus4">Special Economic Zone</label>
+                                                </li>
+                                                <li>
+                                                    <input id="zonestatus5" type="radio" name="zonestatus">
+                                                    <label for="zonestatus5">Open Spaces</label>
+                                                </li>
+                                                <li>
+                                                    <input id="zonestatus6" type="radio" name="zonestatus">
+                                                    <label for="zonestatu6">Agricultural Zone</label>
+                                                </li>
+
+                                            </ul>
+                                            <!-- Checkboxes end -->
+                                        </div>
+                                    </div>
+
+                                    <div id="suitablefor" style="display: none;">
+                                        <div class="clearfix"></div>
+                                        <label>Suitable For: </label>
+                                        <div class=" add-list-tags fl-wrap">
+                                            <!-- Checkboxes -->
+                                            <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                                <li>
+                                                    <input id="cshoptype1" type="radio" name="cshoptype">
+                                                    <label for="commprofstatus1">Jewellery</label>
+                                                </li>
+                                                <li>
+                                                    <input id="cshoptype2" type="radio" name="cshoptype">
+                                                    <label for="cshoptype2">GYM</label>
+                                                </li>
+                                                <li>
+                                                    <input id="cshoptype3" type="radio" name="cshoptype">
+                                                    <label for="cshoptype3">Grocery</label>
+                                                </li>
+                                                <li>
+                                                    <input id="cshoptype4" type="radio" name="cshoptype">
+                                                    <label for="cshoptype4">Clinic</label>
+                                                </li>
+                                                <li>
+                                                    <input id="cshoptype5" type="radio" name="cshoptype">
+                                                    <label for="cshoptype5">Footwear</label>
+                                                </li>
+                                                <li>
+                                                    <input id="cshoptype6" type="radio" name="cshoptype">
+                                                    <label for="cshoptype6">Electronics</label>
+                                                </li>
+                                                <li>
+                                                    <input id="cshoptype7" type="radio" name="cshoptype">
+                                                    <label for="cshoptype7">Clothing</label>
+                                                </li>
+                                                <li>
+                                                    <input id="cshoptype8" type="radio" name="cshoptype">
+                                                    <label for="cshoptype8">Others</label>
+                                                </li>
+                                            </ul>
+
+                                            <!-- Checkboxes end -->
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                    <label>Location Hub: </label>
+                                    <div class=" add-list-tags fl-wrap">
+                                        <!-- Checkboxes -->
+                                        <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                            <li>
+                                                <input id="commlocationstatus1" type="radio" name="commlocationstatus"
+                                                    onclick="othersInput1()">
+                                                <label for="commlocationstatus1">IT Park</label>
+                                            </li>
+                                            <li>
+                                                <input id="commlocationstatus2" type="radio" name="commlocationstatus"
+                                                    onclick="othersInput1()">
+                                                <label for="commlocationstatus2">Buisness Park</label>
+                                            </li>
+                                            <li>
+                                                <input id="commlocationstatus3" type="radio" name="commlocationstatus"
+                                                    onclick="othersInput1()">
+                                                <label for="commlocationstatus3">Mall</label>
+                                            </li>
+                                            <li>
+                                                <input id="commlocationstatus4" type="radio" name="commlocationstatus"
+                                                    onclick="othersInput1()">
+                                                <label for="commlocationstatus4">Commercial Project</label>
+                                            </li>
+                                            <li>
+                                                <input id="commlocationstatus5" type="radio" name="commlocationstatus"
+                                                    onclick="othersInput1()">
+                                                <label for="commlocationstatus5">Industrial Project</label>
+                                            </li>
+                                            <li>
+                                                <input id="commlocationstatus6" type="radio" name="commlocationstatus"
+                                                    onclick="othersInput1()">
+                                                <label for="commlocationstatus6">Retail Complex/Building</label>
+                                            </li>
+                                            <li>
+                                                <input id="commlocationstatus7" type="radio" name="commlocationstatus"
+                                                    onclick="othersInput1()">
+                                                <label for="commlocationstatus7">Market/High Street</label>
+                                            </li>
+                                            <li>
+                                                <input id="commlocationstatus8" type="radio" name="commlocationstatus"
+                                                    onclick="othersInput1()">
+                                                <label for="commlocationstatus8">Others</label>
+                                            </li>
+                                        </ul>
+                                        <div class="col-md-7" id="commlocationstatus9" style="display: none;">
+
+                                            <input type="text" placeholder=" Your location type " value=""
+                                                style="width: 21rem;" />
+                                        </div>
+                                        <!-- Checkboxes end -->
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                    <label>Property Condition: </label>
+                                    <div class=" add-list-tags fl-wrap">
+                                        <!-- Checkboxes -->
+                                        <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                            <li>
+                                                <input id="commprofstatus1" type="radio" name="commprofstatus"
+                                                    onclick="propcondition()">
+                                                <label for="commprofstatus1">Ready to Move</label>
+                                            </li>
+                                            <li>
+                                                <input id="commprofstatus2" type="radio" name="commprofstatus"
+                                                    onclick="propcondition()">
+                                                <label for="commprofstatus2">Bare Shell</label>
+                                            </li>
+
+                                        </ul>
+                                        <!-- Checkboxes end -->
+                                    </div>
+
+                                    <label>Built Up Area: <span class="dec-icon"><i
+                                                class="far fa-sort-size-down-alt"></i></span></label>
+                                    <input type="text" style=" width: 32%;" placeholder="in SqFt." value="" />
+
+                                    <div class="clearfix"></div>
+                                    <label>Ownership: </label>
+                                    <div class=" add-list-tags fl-wrap">
+                                        <!-- Checkboxes -->
+                                        <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                            <li>
+                                                <input id="cownershipstatus1" type="radio" name="cownershipstatus">
+                                                <label for="cownershipstatus1">Freehold</label>
+                                            </li>
+                                            <li>
+                                                <input id="cownershipstatus2" type="radio" name="cownershipstatus">
+                                                <label for="cownershipstatus2">Leasehold</label>
+                                            </li>
+                                            <li>
+                                                <input id="cownershipstatus3" type="radio" name="cownershipstatus">
+                                                <label for="cownershipstatus3">Co-operative Society</label>
+                                            </li>
+                                            <li>
+                                                <input id="cownershipstatus4" type="radio" name="cownershipstatus">
+                                                <label for="cownershipstatus4">Power Of Attorney</label>
+                                            </li>
+
+                                        </ul>
+                                        <!-- Checkboxes end -->
+                                    </div>
+                                    <div id="bareshell" style="display: none;">
+                                        <div class="clearfix"></div>
+                                        <label>Construction Status: </label>
+                                        <div class=" add-list-tags fl-wrap">
+                                            <!-- Checkboxes -->
+                                            <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                                <li>
+                                                    <input id="commconststatus1" type="radio" name="commconststatus">
+                                                    <label for="commconststatus1">No walls</label>
+                                                </li>
+                                                <li>
+                                                    <input id="commconststatus2" type="radio" name="commconststatus">
+                                                    <label for="commconststatus2">Brick Walls</label>
+                                                </li>
+                                                <li>
+                                                    <input id="commconststatus3" type="radio" name="commconststatus">
+                                                    <label for="commconststatus3">Cemented Walls</label>
+                                                </li>
+                                                <li>
+                                                    <input id="commconststatus4" type="radio" name="commconststatus">
+                                                    <label for="commconststatus4">Plastered Walls</label>
+                                                </li>
+
+                                            </ul>
+                                            <!-- Checkboxes end -->
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <label>Flooring: </label>
+                                        <div class=" add-list-tags fl-wrap">
+                                            <!-- Checkboxes -->
+                                            <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                                <li>
+                                                    <input id="commflooringstatus1" type="radio"
+                                                        name="commflooringstatus">
+                                                    <label for="commflooringstatus1">Marbel</label>
+                                                </li>
+                                                <li>
+                                                    <input id="commflooringstatus2" type="radio"
+                                                        name="commflooringstatus">
+                                                    <label for="commflooringstatus2">Concrete</label>
+                                                </li>
+                                                <li>
+                                                    <input id="commflooringstatus3" type="radio"
+                                                        name="commflooringstatus">
+                                                    <label for="commflooringstatus3">Granite</label>
+                                                </li>
+                                                <li>
+                                                    <input id="commflooringstatus4" type="radio"
+                                                        name="commflooringstatus">
+                                                    <label for="commflooringstatus4">Ceremic</label>
+                                                </li>
+
+                                                <li>
+                                                    <input id="commflooringstatus5" type="radio"
+                                                        name="commflooringstatus">
+                                                    <label for="commflooringstatus5">Cement</label>
+                                                </li>
+                                            </ul>
+                                            <!-- Checkboxes end -->
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <label>City</label>
+                                            <div class="listsearch-input-item">
+                                                <select data-placeholder="Apartments"
+                                                    class="chosen-select no-search-select">
+                                                    <option>All Cities</option>
+                                                    <option>New York</option>
+                                                    <option>London</option>
+                                                    <option>Paris</option>
+                                                    <option>Kiev</option>
+                                                    <option>Moscow</option>
+                                                    <option>Dubai</option>
+                                                    <option>Rome</option>
+                                                    <option>Beijing</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label>Locality </label>
+                                            <input style="padding-left: 10px !important" type="text"
+                                                placeholder="Start typing Locality name...." value="" />
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label>Project Name </label>
+                                            <input style="padding-left: 10px !important" type="text"
+                                                placeholder="Start typing project name...." value="" />
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label>Mall/Market Name </label>
+                                            <input style="padding-left: 10px !important" type="text"
+                                                placeholder="Start typing Mall/Market name...." value="" />
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+
+                            <!-- dashboard commerecial pricing part  start -->
+
+
+                            <!-- dasboard-widget-title -->
+                            <div class="dasboard-widget-title dwb-mar fl-wrap">
+                                <h5><i class="fas fa-sliders-h"></i>Pricing Details</h5>
+                            </div>
+                            <!-- dasboard-widget-title end -->
+                            <!-- dasboard-widget-box  -->
+                            <div class="dasboard-widget-box   fl-wrap ">
+                                <div class="custom-form add_room-item-wrap">
+                                    <div class="add_room-container fl-wrap">
+                                        <!-- add_room-item   -->
+                                        <div class="add_room-item fl-wrap">
+                                            <span class="remove-rp tolt" data-microtip-position="left"
+                                                data-tooltip="Remove"><i class="fal fa-times-circle"></i></span>
+                                            <div class="row">
+                                                <div class="col-md-7">
+                                                    <div class="row">
+                                                        <div class="col-md-7">
+                                                            <label id="rentsellprice">Expected Rent <span
+                                                                    class="dec-icon"><i
+                                                                        class="far fa-rupee-sign"></i></span></label>
+                                                            <input type="text" placeholder=" Enter Price " value="" />
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <div class="row">
+                                                        <div class="col-md-9">
+                                                            <label> Security Deposit <span class="dec-icon"><i
+                                                                        class="far fa-rupee-sign"></i></span></label>
+                                                            <input type="text" placeholder=" Enter Amount " value="" />
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                            <div class="clearfix"></div>
+                                            <label>Negotiable</label>
+                                            <div class=" add-list-tags fl-wrap">
+                                                <!-- Checkboxes -->
+                                                <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                                    <li>
+                                                        <input id="commpricenegotiable1" type="radio"
+                                                            name="commpricenegotiable">
+                                                        <label for="commpricenegotiable1">Yes</label>
+                                                    </li>
+                                                    <li>
+                                                        <input id="commpricenegotiable2" type="radio"
+                                                            name="commpricenegotiable">
+                                                        <label for="commpricenegotiable2">No</label>
+                                                    </li>
+                                                </ul>
+                                                <!-- Checkboxes end -->
+                                            </div>
+
+                                            <div class="clearfix"></div>
+                                            <label>DG and UPS Charges Included</label>
+                                            <div class=" add-list-tags fl-wrap">
+                                                <!-- Checkboxes -->
+                                                <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                                    <li>
+                                                        <input id="upschargesinclude1" type="radio"
+                                                            name="upschargesinclude">
+                                                        <label for="upschargesinclude1">Yes</label>
+                                                    </li>
+                                                    <li>
+                                                        <input id="upschargesinclude2" type="radio"
+                                                            name="upschargesinclude">
+                                                        <label for="upschargesinclude2">No</label>
+                                                    </li>
+                                                </ul>
+                                                <!-- Checkboxes end -->
+                                            </div>
+
+                                            <div class="clearfix"></div>
+                                            <label>Electricity Charges Included </label>
+                                            <div class=" add-list-tags fl-wrap">
+                                                <!-- Checkboxes -->
+                                                <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                                    <li>
+                                                        <input id="electricitycharges1" type="radio"
+                                                            name="electricitycharges">
+                                                        <label for="electricitycharges1">Yes</label>
+                                                    </li>
+                                                    <li>
+                                                        <input id="electricitycharges2" type="radio"
+                                                            name="electricitycharges">
+                                                        <label for="electricitycharges2">No</label>
+                                                    </li>
+                                                </ul>
+                                                <!-- Checkboxes end -->
+                                            </div>
+
+                                            <div class="clearfix"></div>
+                                            <label>Water Charges Included</label>
+                                            <div class=" add-list-tags fl-wrap">
+                                                <!-- Checkboxes -->
+                                                <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                                    <li>
+                                                        <input id="watercharges1" type="radio" name="watercharges">
+                                                        <label for="watercharges1">Yes</label>
+                                                    </li>
+                                                    <li>
+                                                        <input id="watercharges2" type="radio" name="watercharges">
+                                                        <label for="watercharges2">No</label>
+                                                    </li>
+                                                </ul>
+                                                <!-- Checkboxes end -->
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-7">
+                                                    <div class="row">
+                                                        <div class="col-md-7">
+                                                            <label id="lookinperiod">Look in Period <span
+                                                                    class="dec-icon"><i
+                                                                        class="far fa-rupee-sign"></i></span></label>
+                                                            <input type="text" placeholder=" Enter Price " value="" />
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <div class="row">
+                                                        <div class="col-md-9">
+                                                            <label> Expected Rent Increase <span class="dec-icon"><i
+                                                                        class="far fa-rupee-sign"></i></span></label>
+                                                            <input type="text" placeholder=" Enter Amount " value="" />
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <!-- <label>Plan Details</label>
+                            <div class="listsearch-input-item">
+                                <textarea cols="40" rows="3" style="height: 85px;" placeholder="Datails" spellcheck="false"></textarea>
+                            </div> -->
+                                        <!--add_room-item end  -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- dashboard commerecial pricing part  end -->
+
+                        </div>
+                        </form>
+                        <!-- commercial end -->
+
+                        <!-- dasboard-widget-title -->
+                        
+                        <!-- dasboard-widget-box  end-->
+                    </div>    
+                </form>
+            </div>
+
+
+        </div>
+        <div class="limit-box fl-wrap"></div>
+        <!-- dashboard-footer -->
+        <div class="dashboard-footer">
+            <div class="dashboard-footer-links fl-wrap">
+                <span>Helpfull Links:</span>
+                <ul>
+                    <li><a href="{% url 'about' %}">About </a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="pricing.html">Pricing Plans</a></li>
+                    <li><a href="{% url 'contacts' %}">Contacts</a></li>
+                    <li><a href="help.html">Help Center</a></li>
+                </ul>
+            </div>
+            <a href="#main" class="dashbord-totop  custom-scroll-link"><i class="fas fa-caret-up"></i></a>
+        </div>
+        <!-- dashboard-footer end -->
+    </div>
+    <!-- content end -->
+    <div class="dashbard-bg gray-bg"></div>
+    </div>
+    <!-- wrapper end -->
+    </div>
+
+
+    <!-- Main end -->
+    <!--=============== scripts  ===============-->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/plugins.js"></script>
+    <script src="/static/js/scripts.js"></script>
+    <script src="/static/https://maps.googleapis.com/maps/api/js?key=YOU_API_KEY_HERE&libraries=places"></script>
+    <script src="/static/js/map-add.js"></script>
+    <script src="/static/js/dashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+
+
+
+    <script>
+
+        function funct1() {
+            var resi = document.getElementById("reidentialdetails");
+            var pg = document.getElementById("pgcolivingdetails");
+            var comm = document.getElementById("commercialdetails");
+            var radslct = document.getElementById("option1resi");
+
+            if (radslct.checked == true) {
+                resi.style.display = "none";
+                pg.style.display = "block";
+                comm.style.display = "none";
+                console.log("func1 run");
+            }
+            else {
+                resi.style.display = "block";
+                pg.style.display = "none";
+                comm.style.display = "none";
+                console.log("func1.2 run");
+            }
+        }
+
+        function funct2() {
+            var resi = document.getElementById("reidentialdetails");
+            var pg = document.getElementById("pgcolivingdetails");
+            var comm = document.getElementById("commercialdetails");
+            var radslct = document.getElementById("option3pg");
+
+            if (radslct.checked == true) {
+                resi.style.display = "none";
+                pg.style.display = "none";
+                comm.style.display = "block";
+
+                console.log("func2 run");
+            }
+            else {
+                resi.style.display = "none";
+                pg.style.display = "block";
+                comm.style.display = "none";
+                console.log("func2.2 run");
+            }
+        }
+        function funct3() {
+            var resi = document.getElementById("reidentialdetails");
+            var pg = document.getElementById("pgcolivingdetails");
+            var comm = document.getElementById("commercialdetails");
+            var radslct = document.getElementById("option2comm");
+
+            if (radslct.checked == true) {
+                resi.style.display = "block";
+                pg.style.display = "none";
+                comm.style.display = "none";
+                console.log("func3 run");
+            }
+            else {
+                resi.style.display = "none";
+                pg.style.display = "none";
+                comm.style.display = "block";
+
+                console.log("func3.2 run");
+            }
+
+        }
+
+
+
+        function togglePropertyType(value) {
+            if (value === "residential") {
+                document.getElementById("listingType1").style.display = "block";
+                document.getElementById("listingType2").style.display = "none";
+
+            }
+            else if (value == "commercial") {
+                document.getElementById("listingType2").style.display = "none";
+                document.getElementById("listingType1").style.display = "none";
+                document.getElementById("commercialType").style.display = "block";
+
+            }
+        }
+
+        function togglePropertyFor(value) {
+            if (value === "Rent") {
+                document.getElementById("residentialType2").style.display = "block";
+                document.getElementById("transactiontype").style.display = "none";
+                document.getElementById("residentialType1").style.display = "none";
+                document.getElementById("propertyage").style.display = "block";
+                document.getElementById("rentsellprice").innerText = "Monthly Rent";
+
+            }
+            else if (value === "Sell") {
+                document.getElementById("residentialType1").style.display = "block";
+                document.getElementById("transactiontype").style.display = "block";
+                document.getElementById("residentialType2").style.display = "none";
+                document.getElementById("propertyage").style.display = "none";
+                document.getElementById("rentsellprice").innerText = "Cost";
+            }
+        }
+
+        function toggleresidentialproptype(value) {
+            if (value === "plot") {
+                document.getElementById("residentialspropertydetails2").style.display = "block";
+                document.getElementById("residentialspropertydetails1").style.display = "none";
+                document.getElementById("locationdetails").style.display = "none";
+                console.log("plot view");
+            }
+            else if (value === "villa" || value === "independenthouse") {
+                document.getElementById("residentialspropertydetails2").style.display = "none";
+                document.getElementById("residentialspropertydetails1").style.display = "block";
+                document.getElementById("locationdetails").style.display = "none";
+                console.log("other views1");
+            }
+
+            else if (value === "apartment" || value === "independentfloor") {
+                document.getElementById("residentialspropertydetails2").style.display = "none";
+                document.getElementById("residentialspropertydetails1").style.display = "block";
+                document.getElementById("locationdetails").style.display = "block";
+                console.log("other views2");
+            }
+        }
+
+        function toggleresidentialproptype2(value) {
+            if (value === "villa" || value === "independenthouse") {
+                document.getElementById("locationdetails").style.display = "none";
+            }
+            else if (value === "apartment" || value === "independentfloor") {
+                document.getElementById("locationdetails").style.display = "block";
+
+            }
+        }
+
+        function toggleCommercialPropertyFor(value) {
+            if (value === "Rent") {
+                document.getElementById("availablefrom").style.display = "block";
+                document.getElementById("commercialType").style.display = "block";
+
+            } else if (value === "Sell") {
+                document.getElementById("availablefrom").style.display = "none";
+                document.getElementById("commercialType").style.display = "block";
+
+            }
+        }
+
+        function toggleCommercialPropertyType(value) {
+            if (value === "office" || value === "warehouse") {
+                document.getElementById("zonetype").style.display = "block";
+                document.getElementById("suitablefor").style.display = "none";
+
+            }
+            else if (value === "retailshop" || value === "showroom") {
+                document.getElementById("zonetype").style.display = "none";
+                document.getElementById("suitablefor").style.display = "block";
+
+            }
+        }
+        function propcondition() {
+            var commprofstatus2 = document.getElementById("commprofstatus2");
+            var bareshell = document.getElementById("bareshell");
+
+            if (commprofstatus2.checked == true) {
+                bareshell.style.display = "block";
+                console.log("divshow");
+            } else {
+                bareshell.style.display = "none";
+                console.log("divhide1");
+            }
+        }
+
+
+
+        function customInput1() {
+            var check20 = document.getElementById("check-c20");
+            var customBhk = document.getElementById("customBhk");
+
+            if (check20.checked == true) {
+                customBhk.style.display = "block";
+            } else if (check20.checked == false) {
+                customBhk.style.display = "none";
+            }
+        }
+
+        function propertyavailable1() {
+            var availablestatus1 = document.getElementById("availablestatus1");
+            var sellpropertyage2 = document.getElementById("sellpropertyage2");
+            var availablestatus2 = document.getElementById("availablestatus2");
+            var possessiondate = document.getElementById("possessiondate");
+
+            if (availablestatus1.checked == true) {
+                sellpropertyage2.style.display = "block";
+                possessiondate.style.display = "none";
+                console.log("age show");
+            } else if (availablestatus2.checked == true) {
+                possessiondate.style.display = "block";
+                sellpropertyage2.style.display = "none";
+                console.log("age hide");
+            }
+        }
+
+        function propertyavailable2() {
+            var commavailablestatus1 = document.getElementById("commposessionstatus1");
+            var commsellpropertyage2 = document.getElementById("commsellpropertyage2");
+            var commavailablestatus2 = document.getElementById("commposessionstatus2");
+            var commpossessiondate = document.getElementById("commpossessiondate");
+
+            if (commavailablestatus1.checked == true) {
+                commsellpropertyage2.style.display = "block";
+                commpossessiondate.style.display = "none";
+                console.log("comm age show");
+            } else if (commavailablestatus2.checked == true) {
+                commpossessiondate.style.display = "block";
+                commsellpropertyage2.style.display = "none";
+                console.log(" comm age hide");
+            }
+        }
+
+        function propertyavailable3() {
+            var resipossessionstatus1 = document.getElementById("resipossessionstatus1");
+            var plotpropertyage3 = document.getElementById("plotpropertyage3");
+            var resipossessionstatus2 = document.getElementById("resipossessionstatus2");
+            var plotpossessiondate = document.getElementById("plotpossessiondate");
+
+            if (resipossessionstatus1.checked == true) {
+                plotpropertyage3.style.display = "block";
+                plotpossessiondate.style.display = "none";
+                console.log("comm age show");
+            } else if (resipossessionstatus2.checked == true) {
+                plotpossessiondate.style.display = "block";
+                plotpropertyage3.style.display = "none";
+                console.log(" comm age hide");
+            }
+        }
+
+        function customInput2() {
+            var check30 = document.getElementById("check-c30");
+            var customBrokerage = document.getElementById("customBrkg");
+
+            if (check30.checked == true) {
+                customBrokerage.style.display = "block";
+            } else if (check30.checked == false) {
+                customBrokerage.style.display = "none";
+            }
+        }
+
+        function othersInput1() {
+            var commlocationstatus8 = document.getElementById("commlocationstatus8");
+            var commlocationstatus9 = document.getElementById("commlocationstatus9");
+
+            if (commlocationstatus8.checked == true) {
+                commlocationstatus9.style.display = "block";
+                console.log("hubshow");
+            } else if (commlocationstatus8.checked == false) {
+                commlocationstatus9.style.display = "none";
+                console.log("hubhide");
+            }
+        }
+
+
+        const fileInput = document.querySelector(".upload");
+        const photoUploadFiles = document.querySelector(".photoUpload-files");
+        const imagePreview = document.querySelector(".image-preview");
+        
+        fileInput.addEventListener("change", function () {
+          const files = fileInput.files;
+          for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            const fileName = file.name;
+            const fileSize = file.size;
+            const fileExt = fileName.split(".").pop().toLowerCase();
+            const allowedExtensions = ["jpg", "jpeg", "png", "gif", "bmp"];
+        
+            if (!allowedExtensions.includes(fileExt)) {
+              alert("Invalid file type. Only .jpg, .jpeg, .png, .gif, .bmp files are allowed.");
+              continue;
+            }
+        
+            if (fileSize > 10 * 1024 * 1024) {
+              alert("File size exceeded. Maximum file size allowed is 10 MB.");
+              continue;
+            }
+        
+            const photoUploadFilesItem = document.createElement("div");
+         
+            photoUploadFiles.appendChild(photoUploadFilesItem);
+        
+            // create preview element for each image
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = function () {
+              const previewItem = document.createElement("div");
+              previewItem.classList.add("preview-item");
+        
+              const previewImage = document.createElement("img");
+              previewImage.src = reader.result;
+              previewImage.classList.add("preview-image");
+              previewItem.appendChild(previewImage);
+        
+              const deleteButton = document.createElement("button");
+              deleteButton.innerText = "X";
+              deleteButton.classList.add("delete-button");
+              deleteButton.addEventListener("click", function () {
+                previewItem.remove();
+                photoUploadFilesItem.remove();
+              });
+              previewItem.appendChild(deleteButton);
+        
+              imagePreview.appendChild(previewItem);
+            };
+          }
+        });
+
+    </script>
+      
+</body>
+
+</html>

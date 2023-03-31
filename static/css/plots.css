@@ -1,0 +1,51 @@
+.plothead{
+    color: white;
+    font-size: 32px;
+}
+.bold1{
+    color: #0095ff;
+    font-weight: bold;
+}
+.plotpick{
+    color: white;
+    font-size: 17px;
+}
+
+.section-content1{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 4rem;
+    
+}
+.collection-image{
+    width: 16rem !important;
+    height: 12rem;
+    border-radius: 1rem;  
+}
+.coll1{
+    color: white;
+    font-size: x-large;
+    margin-top: 1rem;
+}
+.textowner{
+    color: white !important;
+    text-align: right;
+}
+.textname{
+    color: white;
+    text-align: right;
+}
+.headercontent{
+    text-align: center !important;
+
+}
+.textborder{
+    color: white !important;
+    background-color: #0095ff !important;
+    border: 1px solid 3e7be5 !important;
+    border-radius: 10px !important;
+    padding: 15px 35px !important;
+}
+.plotbg-image{
+    height: 33rem !important;
+}
